@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minni Calculator</title>
+    <style>
+    body{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height:100vh;
+        background-color:#1e1e1e;
+    }
+    .container{
+        display:flex;
+        gap:10px;
+        padding:20px;
+        background:#333;
+        border-radius:15px;
+        align-items:flex-start;
+    }
+    .numbers{
+        display:grid;
+        grid-template-columns:repeat(4, 60px);
+        grid-auto-rows:60px;
+        gap:5px;
+    }
+    button
+    {
+        width:60px;
+        height:60px;
+        border-radius:50%;
+        border:none;
+        font-size:18px;
+        cursor:pointer;
+        box-shadow:2px 2px 5px rgba(0,0,0,0.3);
+    }
+    #display
+    {
+        width:300px;
+        height:50px;
+        margin-bottom:10px;
+        font-size:22px;
+        text-align:right;
+        border-radius:10px;
+        padding-right:10px;
+        border:none;
+        outline:none;
+    }
+    button:hover{
+        background:#ddd;
+    }
+    .calculator{
+        box-shadow:0 0 20px rgba(0,0,0,0.5);
+        padding:15px;
+        border-radius:20px;
+    }
+    .operator
+    {
+        background:grey;
+        color:white;
+    }
+    .signal
+
+    {
+        background:rgb(66, 149, 66);
+        color:white;
+    }
+    .danger
+    {
+        grid-column:2;
+        background:rgb(113, 47, 47);
+        color:white;
+    }
+    .operator1
+    {
+        background: rgb(60, 60, 132);
+        color:white;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="display" readonly>
+    <div class="container">
+        <div class="numbers">
+            <button class="operator1" onclick="clearDisplay()">AC</button>
+            <button class="operator" onclick="appendValue('(')">(</button>
+    <button class="operator" onclick="appendValue(')')">)</button>
+    <button class="operator" onclick="appendValue('%')">%</button>
+    <button onclick="appendValue('7')">7</button>
+    <button onclick="appendValue('8')">8</button>
+    <button onclick="appendValue('9')">9</button>
+    <button class="operator" onclick="appendValue('x')">x</button>
+    <button onclick="appendValue('4')">4</button>
+    <button onclick="appendValue('5')">5</button>
+    <button onclick="appendValue('6')">6</button>
+    <button class="operator" onclick="appendValue('+')">+</button>
+    <button onclick="appendValue('1')">1</button>
+    <button onclick="appendValue('2')">2</button>
+    <button onclick="appendValue('3')">3</button>
+    <button class="operator" onclick="appendValue('-')">-</button>
+    <button onclick="appendValue('0')">0</button>
+     <button onclick="appendValue('.')">.</button>
+      <button class="operator" onclick="appendValue('/')">/</button>
+    <button class="operator" onclick="appendValue('**')">x^y</button>
+    <button class="danger" onclick="backspace()">DEL</button>
+     <button class="signal" onclick="calculate()">=</button>
+    </div>
+    </div>
+    </div>
+    <script src="calscript.js"></script>
+</body>
+</html>
